@@ -30,7 +30,7 @@ public class Main implements RequestHandler<Map<String, Object>,Map<String, Stri
 
         String originalUrl = bodyMap.get("originalUrl");
         String expirationTime = bodyMap.get("expirationTime");
-        Long expirationTimeInSeconds = Long.parseLong(expirationTime) * 3600;
+        Long expirationTimeInSeconds = Long.parseLong(expirationTime);
 
         String shortUrlCode = UUID.randomUUID().toString().substring(0, 8);
 
