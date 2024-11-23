@@ -54,7 +54,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <createDependecyReducePom>false</createDependecyReducePom>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>
                 </executions>

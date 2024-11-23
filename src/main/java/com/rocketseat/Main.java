@@ -2,6 +2,7 @@ package com.rocketseat;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,9 +14,10 @@ public class Main implements RequestHandler<Map<String, Object>,Map<String, Stri
 
     @Override
     public Map<String, String> handleRequest(Map<String, Object> input, Context context) {
-        String body = input.get("body").toString();
 
+        String body = input.get("body").toString();
         Map<String, String> bodyMap;
+
         try {
             bodyMap = objectMapper.readValue(body, Map.class);
         } catch (Exception exception) {
@@ -30,7 +32,7 @@ public class Main implements RequestHandler<Map<String, Object>,Map<String, Stri
         Map<String, String> response = new HashMap<>();
         response.put("code", shortUrlCode);
 
-        return null;
+        return response;
 
     }
 
